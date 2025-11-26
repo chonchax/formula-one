@@ -4,6 +4,8 @@ services:
   backend:
     build: ./backend
     container_name: f1_backend
+    tty: true
+    stdin_open: true
     command: bundle exec rails server -b 0.0.0.0 -p 3000
     ports:
       - "3001:3000"
@@ -35,7 +37,7 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: f1_backend
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
 

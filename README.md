@@ -17,26 +17,33 @@ Frontend: http://localhost:5174
 
 Backend exposed at: http://localhost:3001/api/v1
 
-Frontend login:
+## Frontend login:
 
+```bash
 Email: yann@test.com
-
 Password: 123456
+```
 
 The VITE_API_URL variable is already configured to point to http://localhost:3001/api/v1.
 
-API - Authentication
+## API - Authentication
 
 POST /sign_in
 
 Request JSON:
+
+```bash
 {
 "user": {
 "email": "yann@test.com",
 "password": "123456"
 }
 }
+```
+
 Response:
+
+```bash
 {
 "token": "<JWT_TOKEN>",
 "user": {
@@ -45,5 +52,10 @@ Response:
 "created_at": "2025-11-29T11:10:17.857Z"
 }
 }
-Use the token in the headers for protected routes:
+```
+
+## Use the token in the headers for protected routes:
+
+```bash
 Authorization: Bearer <JWT_TOKEN>
+```
